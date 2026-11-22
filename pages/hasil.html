@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Evaluasi Pembelajaran - PARABOLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo.svg">
+  <style>
+    @media print {
+
+      .site-header,
+      .learning-flow-banner,
+      .site-footer,
+      .no-print {
+        display: none !important;
+      }
+
+      body {
+        background-color: #FFFFFF;
+      }
+
+      .result-card {
+        box-shadow: none;
+        border: 1px solid #000000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo" aria-label="PARABOLearn Beranda">
+        <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="petunjuk.html" class="nav-link">Petunjuk</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="komponen.html" class="nav-link">Komponen Gerak</a></li>
+          <li><a href="besaran.html" class="nav-link">Besaran & Rumus</a></li>
+          <li><a href="animasi.html" class="nav-link">Animasi</a></li>
+          <li><a href="simulasi.html" class="nav-link">Simulasi</a></li>
+          <li><a href="contoh-soal.html" class="nav-link">Contoh Soal</a></li>
+          <li><a href="latihan.html" class="nav-link">Latihan</a></li>
+          <li><a href="evaluasi.html" class="nav-link">Evaluasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" aria-label="Toggle Suara" title="Aktif/Nonaktifkan Suara"></button>
+        <button class="mobile-toggle" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Page Header -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span>›</span>
+        <span>Laporan Hasil Evaluasi</span>
+      </nav>
+      <h1 class="page-title">Hasil Evaluasi Belajar Siswa</h1>
+      <p class="page-subtitle">Laporan capaian kompetensi gerak parabola, analisis skor penilaian otomatis, predikat
+        ketuntasan, dan lembar review jawaban lengkap.</p>
+    </div>
+  </div>
+
+  <main class="container" style="margin-bottom: 4rem;">
+    <!-- Result Summary Card -->
+    <div class="result-card">
+      <div class="badge badge-primary" style="margin-bottom: 1rem;">Laporan Pembelajaran PARABOLearn</div>
+
+      <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">
+        Selamat, <span id="res-student-name" style="color: var(--primary);">Meutya Khaerunnisa</span>!
+      </h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Anda telah menyelesaikan seluruh instrumen evaluasi materi Gerak Parabola Kelas XI SMA.
+      </p>
+
+      <!-- Circular Score Indicator -->
+      <div class="score-circle" id="res-score-circle" style="--percent: 85;">
+        <div class="score-circle-inner">
+          <div id="res-score-val" class="score-number">85</div>
+          <div class="score-total">dari 100 poin</div>
+        </div>
+      </div>
+
+      <!-- Predicate Badge & Description -->
+      <div style="margin-bottom: 1.5rem;">
+        <div id="res-predicate"
+          style="font-size: 1.35rem; font-weight: 800; color: var(--primary-deep); margin-bottom: 0.35rem;">
+          Sangat Baik (Tuntas Istimewa)
+        </div>
+        <p id="res-predicate-desc"
+          style="font-size: 0.95rem; color: var(--text-body); max-width: 580px; margin: 0 auto;">
+          Selamat! Anda telah menguasai konsep, komponen gerak horizontal GLB dan vertikal GLBB, persamaan besaran
+          fisik, serta analisis eksperimen virtual secara komprehensif.
+        </p>
+      </div>
+
+      <!-- Result Breakdown Stats -->
+      <div class="result-breakdown">
+        <div class="breakdown-box correct">
+          <div id="res-correct-count" class="breakdown-num">13</div>
+          <div class="breakdown-label">Jawaban Benar</div>
+        </div>
+        <div class="breakdown-box incorrect">
+          <div id="res-incorrect-count" class="breakdown-num">2</div>
+          <div class="breakdown-label">Jawaban Salah</div>
+        </div>
+        <div class="breakdown-box">
+          <div id="res-duration" class="breakdown-num" style="font-size: 1.35rem; padding-top: 0.3rem;">12m 45s</div>
+          <div class="breakdown-label">Waktu Pengerjaan</div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="no-print" style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <button onclick="window.print()" class="btn btn-secondary">
+          <span>🖨️ Cetak / Simpan Laporan (PDF)</span>
+        </button>
+        <a href="evaluasi.html" class="btn btn-purple">
+          <span>🔄 Ulangi Evaluasi</span>
+        </a>
+        <a href="../index.html" class="btn btn-primary">
+          <span>🏠 Kembali ke Beranda</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Review Section: Detailed Question Review -->
+    <div class="review-section">
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">
+          📝 Rincian Pembahasan Soal per Nomor
+        </h3>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">
+          Hijau = Jawaban Benar | Merah = Jawaban Anda Kurang Tepat
+        </span>
+      </div>
+
+      <div id="res-review-container">
+        <!-- Rendered dynamically from LocalStorage evaluation review -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn"
+            style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+          <p>PARABOLearn adalah Multimedia Pembelajaran Interaktif Berbasis Web pada Materi Gerak Parabola untuk Siswa
+            Kelas XI SMA.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Alur Belajar</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="materi.html">Materi Pokok</a></li>
+            <li><a href="simulasi.html">Simulasi Laboratorium</a></li>
+            <li><a href="evaluasi.html">Evaluasi Ulang</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Media Pembelajaran</h5>
+          <ul class="footer-links">
+            <li><a href="komponen.html">Komponen Vektor</a></li>
+            <li><a href="besaran.html">Besaran & Rumus</a></li>
+            <li><a href="animasi.html">Animasi Dinamis</a></li>
+            <li><a href="latihan.html">Latihan Mandiri</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Identitas Peneliti</h5>
+          <p style="font-size:0.85rem; color:#94A3B8;">Meutya Khaerunnisa<br>NIM: 240209501076<br>PTIK E 24 - UNM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PARABOLearn. Hak Cipta Dilindungi.</div>
+        <div>Explore the Motion, Understand the Physics!</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load last evaluation from LocalStorage
+      const result = AppStorage.getLastEvaluationResult();
+
+      if (!result) {
+        // Fallback demo state if directly accessed without taking test
+        document.getElementById('res-student-name').textContent = AppStorage.getUserName();
+        document.getElementById('res-score-val').textContent = '100';
+        document.getElementById('res-correct-count').textContent = '15';
+        document.getElementById('res-incorrect-count').textContent = '0';
+        document.getElementById('res-duration').textContent = '15m 00s';
+        document.getElementById('res-score-circle').style.setProperty('--percent', '100');
+        document.getElementById('res-predicate').textContent = 'Sangat Baik (Sempurna)';
+        document.getElementById('res-predicate-desc').textContent = 'Anda belum mengambil evaluasi atau sedang melihat pratinjau. Silakan klik tombol "Ulangi Evaluasi" untuk memulai tes.';
+        return;
+      }
+
+      // Populate results
+      document.getElementById('res-student-name').textContent = result.studentName || 'Peserta Didik';
+      document.getElementById('res-score-val').textContent = result.score;
+      document.getElementById('res-score-circle').style.setProperty('--percent', result.score);
+      document.getElementById('res-predicate').textContent = result.predicate;
+      document.getElementById('res-predicate-desc').textContent = result.predicateDesc;
+      document.getElementById('res-correct-count').textContent = result.correctCount;
+      document.getElementById('res-incorrect-count').textContent = result.incorrectCount;
+      document.getElementById('res-duration').textContent = result.duration;
+
+      // Play fanfare on good score
+      if (result.score >= 75 && window.SoundEffects) {
+        SoundEffects.playFanfare();
+      }
+
+      // Render question review
+      const reviewContainer = document.getElementById('res-review-container');
+      if (reviewContainer && result.review && Array.isArray(result.review)) {
+        reviewContainer.innerHTML = '';
+        const letters = ['A', 'B', 'C', 'D'];
+
+        result.review.forEach((item, idx) => {
+          const card = document.createElement('div');
+          card.className = 'review-item';
+          card.style.borderLeft = item.isCorrect ? '5px solid var(--success)' : '5px solid var(--danger)';
+
+          const userAnsLetter = item.userAnswer !== null ? letters[item.userAnswer] : 'Tidak dijawab';
+          const correctAnsLetter = letters[item.correctAnswer];
+
+          card.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+              <span style="font-weight:700; font-size:1rem; color:var(--text-main);">Soal No. ${idx + 1}</span>
+              <span class="badge ${item.isCorrect ? 'badge-success' : 'badge-danger'}" style="${item.isCorrect ? '' : 'background-color:var(--danger-soft); color:var(--danger-dark);'}">
+                ${item.isCorrect ? '✓ Jawaban Benar' : '✗ Jawaban Salah'}
+              </span>
+            </div>
+            <p style="font-size:1rem; font-weight:600; color:var(--text-main); margin-bottom:1rem;">${item.question}</p>
+            
+            <div style="background-color:var(--bg-alt); padding:0.85rem; border-radius:var(--radius-md); font-size:0.9rem; margin-bottom:0.75rem;">
+              <div>• <strong>Jawaban Anda:</strong> <span style="font-weight:700; color:${item.isCorrect ? 'var(--success-dark)' : 'var(--danger-dark)'}">${userAnsLetter}. ${item.userAnswer !== null ? item.options[item.userAnswer] : ''}</span></div>
+              <div>• <strong>Kunci Jawaban:</strong> <span style="font-weight:700; color:var(--success-dark);">${correctAnsLetter}. ${item.options[item.correctAnswer]}</span></div>
+            </div>
+
+            <div class="callout callout-info" style="margin:0; padding:0.75rem 1rem;">
+              <div class="callout-content">
+                <p><strong>Pembahasan:</strong> ${item.explanation}</p>
+              </div>
+            </div>
+          `;
+
+          reviewContainer.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

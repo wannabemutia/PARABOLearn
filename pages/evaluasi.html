@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluasi Pembelajaran - PARABOLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo.svg">
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo" aria-label="PARABOLearn Beranda">
+        <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="petunjuk.html" class="nav-link">Petunjuk</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="komponen.html" class="nav-link">Komponen Gerak</a></li>
+          <li><a href="besaran.html" class="nav-link">Besaran & Rumus</a></li>
+          <li><a href="animasi.html" class="nav-link">Animasi</a></li>
+          <li><a href="simulasi.html" class="nav-link">Simulasi</a></li>
+          <li><a href="contoh-soal.html" class="nav-link">Contoh Soal</a></li>
+          <li><a href="latihan.html" class="nav-link">Latihan</a></li>
+          <li><a href="evaluasi.html" class="nav-link active">Evaluasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" aria-label="Toggle Suara" title="Aktif/Nonaktifkan Suara"></button>
+        <button class="mobile-toggle" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Page Header -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span>›</span>
+        <span>Evaluasi Pembelajaran</span>
+      </nav>
+      <h1 class="page-title">Evaluasi Akhir Pembelajaran Fisika 🏆</h1>
+      <p class="page-subtitle">Uji kemampuanmu lewat 15 soal evaluasi gerak parabola kelas XI SMA. Kerjakan dengan
+        teliti dan buktikan seberapa jauh kamu menguasai materinya!</p>
+    </div>
+  </div>
+
+  <main class="container quiz-container" style="margin-bottom: 4rem;">
+
+    <!-- ==========================================
+         1. LAYAR PERSIAPAN (START SCREEN)
+         Ditampilkan pertama kali; ujian belum dimulai
+         ========================================== -->
+    <div id="eval-start-screen" class="eval-start-card">
+      <div style="text-align: center; margin-bottom: 1.75rem;">
+        <span class="badge badge-purple" style="margin-bottom: 0.75rem; font-size: 0.85rem; padding: 0.35rem 0.9rem;">
+          🎯 Evaluasi Akhir Pembelajaran
+        </span>
+        <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+          Siap Menguji Pemahaman Fisikamu?
+        </h2>
+        <p style="font-size: 0.98rem; color: var(--text-body); max-width: 620px; margin: 0 auto; line-height: 1.6;">
+          Tahap evaluasi ini dirancang untuk mengukur sejauh mana penguasaan konsep gerak parabola, analisis komponen
+          kecepatan, perhitungan besaran fisis, dan penerapannya di kehidupan sehari-hari.
+        </p>
+      </div>
+
+      <!-- Grid Informasi Spesifikasi Ujian -->
+      <div class="eval-spec-grid">
+        <div class="eval-spec-box">
+          <div class="eval-spec-icon">📝</div>
+          <div class="eval-spec-title">Jumlah Soal</div>
+          <div class="eval-spec-value">15 Nomor</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Pilihan Ganda (A–D)</div>
+        </div>
+        <div class="eval-spec-box">
+          <div class="eval-spec-icon">⏱️</div>
+          <div class="eval-spec-title">Alokasi Waktu</div>
+          <div class="eval-spec-value">25 Menit</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Hitung Mundur Otomatis</div>
+        </div>
+        <div class="eval-spec-box">
+          <div class="eval-spec-icon">🎯</div>
+          <div class="eval-spec-title">Standar KKM</div>
+          <div class="eval-spec-value">Nilai 75</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Kriteria Ketuntasan</div>
+        </div>
+        <div class="eval-spec-box">
+          <div class="eval-spec-icon">📊</div>
+          <div class="eval-spec-title">Hasil Belajar</div>
+          <div class="eval-spec-value">Otomatis</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Skor & Lembar Review</div>
+        </div>
+      </div>
+
+      <!-- Input Identitas Siswa -->
+      <div class="card"
+        style="background-color: var(--bg-alt); border: 1px solid var(--border-color); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;">
+        <label for="eval-start-name"
+          style="font-size: 0.88rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.4rem;">
+          👤 Masukkan Nama Lengkap Kamu:
+        </label>
+        <input type="text" id="eval-start-name" class="text-input" placeholder="Ketik nama lengkapmu di sini..."
+          style="background-color: #FFFFFF; font-size: 1rem; font-weight: 600;" value="Meutya Khaerunnisa">
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; margin-bottom: 0;">
+          *Nama ini akan tertera pada Lembar Laporan Hasil Evaluasi dan riwayat belajarmu.
+        </p>
+      </div>
+
+      <!-- Petunjuk Pengerjaan -->
+      <div class="callout callout-info" style="margin-bottom: 2rem;">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <h4>Petunjuk & Aturan Pengerjaan:</h4>
+          <ul
+            style="padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.7; margin-top: 0.35rem; margin-bottom: 0;">
+            <li>Waktu 25 menit <strong>baru akan mulai berjalan</strong> setelah kamu menekan tombol <strong>"Mulai
+                Mengerjakan Evaluasi"</strong> di bawah.</li>
+            <li>Pilihlah salah satu opsi jawaban (A, B, C, atau D) yang menurutmu paling tepat.</li>
+            <li>Gunakan <strong>Lembar Navigasi Nomor Soal</strong> di bawah kartu soal untuk berpindah ke nomor mana
+              pun dengan cepat.</li>
+            <li>Jawabanmu tersimpan secara otomatis, dan kamu bebas mengubah pilihan selama waktu belum habis.</li>
+            <li>Bila seluruh soal selesai, klik tombol <strong>"Kumpulkan Evaluasi"</strong> untuk melihat skor
+              perolehan dan lembar pembahasan lengkap!</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tombol Aksi Mulai -->
+      <button id="btn-start-eval" class="btn btn-primary btn-lg"
+        style="width: 100%; font-size: 1.15rem; padding: 1.1rem 2rem; justify-content: center; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35); cursor: pointer;">
+        <span>🚀 Mulai Mengerjakan Evaluasi</span>
+      </button>
+
+      <!-- Opsi Persiapan Tambahan -->
+      <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap;">
+        <a href="materi.html" class="btn btn-secondary btn-sm">
+          <span>📖 Buka Ringkasan Materi</span>
+        </a>
+        <a href="simulasi.html" class="btn btn-secondary btn-sm">
+          <span>🔬 Eksperimen di Simulasi</span>
+        </a>
+        <a href="latihan.html" class="btn btn-secondary btn-sm">
+          <span>📝 Coba Latihan Mandiri</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         2. LAYAR PENGERJAAN SOAL (EXAM SCREEN)
+         Awalnya tersembunyi (display: none);
+         Ditampilkan setelah tombol mulai diklik
+         ========================================== -->
+    <div id="eval-exam-screen" style="display: none;">
+      <!-- Student Profile & Exam Header -->
+      <div class="card" style="margin-bottom: 1.5rem; padding: 1.25rem 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span
+              style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Peserta
+              Didik:</span>
+            <div id="eval-student-name-display"
+              style="font-size: 1.1rem; font-weight: 800; color: var(--primary-deep); margin-top: 0.15rem;"></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="quiz-timer">
+              <span>⏱️ Sisa Waktu:</span>
+              <span id="eval-timer-display">25:00</span>
+            </div>
+            <button id="eval-submit-btn" class="btn btn-success" style="display: none;">
+              <span>✓ Kumpulkan Evaluasi</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exam Progress Bar -->
+      <div class="quiz-header-bar">
+        <div>
+          <span class="badge badge-purple" style="margin-bottom: 0.25rem;">Evaluasi Standar SMA</span>
+          <div id="eval-q-num" class="quiz-progress-text">Soal No. 1 dari 15</div>
+        </div>
+        <div id="eval-answered-count" style="font-weight: 700; color: var(--text-body); font-size: 0.95rem;">
+          Terjawab: 0 / 15
+        </div>
+      </div>
+
+      <div class="quiz-progress-track">
+        <div id="eval-progress-fill" class="quiz-progress-fill"></div>
+      </div>
+
+      <!-- Question Card -->
+      <div class="question-card">
+        <h2 id="eval-question-text" class="question-text">
+          Memuat naskah soal evaluasi...
+        </h2>
+
+        <!-- Radio / Option Tile Container -->
+        <div id="eval-options-container" class="options-list">
+          <!-- Rendered dynamically by evaluation.js -->
+        </div>
+      </div>
+
+      <!-- Question Navigation Buttons -->
+      <div class="quiz-nav-actions">
+        <button id="eval-prev-btn" class="btn btn-secondary">
+          <span>← Soal Sebelumnya</span>
+        </button>
+        <button id="eval-next-btn" class="btn btn-primary">
+          <span>Soal Selanjutnya →</span>
+        </button>
+      </div>
+
+      <!-- Question Jump Palette (Nomor 1 - 15) -->
+      <div style="margin-top: 2rem;">
+        <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem;">
+          Lembar Navigasi Nomor Soal:
+        </div>
+        <div id="eval-palette-container" class="question-palette">
+          <!-- Palette buttons 1 to 15 -->
+        </div>
+        <div
+          style="display: flex; gap: 1.25rem; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; flex-wrap: wrap;">
+          <span><span
+              style="display:inline-block; width:12px; height:12px; background:var(--primary); border-radius:3px; margin-right:4px;"></span>
+            Sedang Dibuka</span>
+          <span><span
+              style="display:inline-block; width:12px; height:12px; background:var(--primary-soft); border-radius:3px; margin-right:4px;"></span>
+            Sudah Terjawab</span>
+          <span><span
+              style="display:inline-block; width:12px; height:12px; background:var(--bg-alt); border:1px solid #CBD5E1; border-radius:3px; margin-right:4px;"></span>
+            Belum Terjawab</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn"
+            style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+          <p>PARABOLearn adalah Multimedia Pembelajaran Interaktif Berbasis Web pada Materi Gerak Parabola untuk Siswa
+            Kelas XI SMA.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Alur Belajar</h5>
+          <ul class="footer-links">
+            <li><a href="materi.html">Materi Pokok</a></li>
+            <li><a href="komponen.html">Komponen Gerak</a></li>
+            <li><a href="besaran.html">Besaran & Rumus</a></li>
+            <li><a href="simulasi.html">Simulasi Laboratorium</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Uji Kompetensi</h5>
+          <ul class="footer-links">
+            <li><a href="contoh-soal.html">Contoh Soal</a></li>
+            <li><a href="latihan.html">Latihan Soal</a></li>
+            <li><a href="evaluasi.html">Evaluasi Pembelajaran</a></li>
+            <li><a href="hasil.html">Hasil Evaluasi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Identitas Peneliti</h5>
+          <p style="font-size:0.85rem; color:#94A3B8;">Meutya Khaerunnisa<br>NIM: 240209501076<br>PTIK E 24 - UNM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PARABOLearn. Hak Cipta Dilindungi.</div>
+        <div>Explore the Motion, Understand the Physics!</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/evaluation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new EvaluationManager();
+    });
+  </script>
+</body>
+
+</html>

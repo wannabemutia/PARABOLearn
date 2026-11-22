@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="1">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <radialGradient id="smokeGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F1F5F9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="260" rx="12" fill="url(#skyGrad)"/>
+  <!-- Mountain silhouette -->
+  <path d="M 0 215 L 120 160 L 220 190 L 320 140 L 400 215 Z" fill="#CBD5E1" opacity="0.5"/>
+  <rect y="215" width="400" height="45" fill="#475569"/>
+  <line x1="0" y1="215" x2="400" y2="215" stroke="#334155" stroke-width="2"/>
+
+  <!-- Cannon Base & Wheel -->
+  <g transform="translate(60, 205)">
+    <!-- Wheel -->
+    <circle cx="0" cy="0" r="18" fill="#78350F" stroke="#451A03" stroke-width="3"/>
+    <circle cx="0" cy="0" r="7" fill="#451A03"/>
+    <line x1="-15" y1="0" x2="15" y2="0" stroke="#451A03" stroke-width="2"/>
+    <line x1="0" y1="-15" x2="0" y2="15" stroke="#451A03" stroke-width="2"/>
+    <!-- Barrel rotated at 45 deg -->
+    <g transform="rotate(-45)">
+      <rect x="-8" y="-12" width="50" height="24" rx="4" fill="#334155" stroke="#1E293B" stroke-width="2"/>
+      <rect x="36" y="-14" width="8" height="28" rx="2" fill="#1E293B"/>
+    </g>
+  </g>
+
+  <!-- Muzzle Blast Smoke -->
+  <circle cx="95" cy="170" r="16" fill="url(#smokeGrad)"/>
+  <circle cx="105" cy="162" r="12" fill="url(#smokeGrad)"/>
+  <polygon points="98,168 120,150 108,162 125,160 102,175" fill="#F59E0B" opacity="0.8"/>
+
+  <!-- Projectile Arc -->
+  <path d="M 95 170 Q 240 25 365 215" fill="none" stroke="#EF4444" stroke-width="3" stroke-dasharray="6 3"/>
+
+  <!-- Cannonball in Flight -->
+  <circle cx="240" cy="72" r="8" fill="#1E293B" stroke="#0F172A" stroke-width="1.5"/>
+
+  <!-- Angle theta and max distance R -->
+  <line x1="95" y1="170" x2="150" y2="170" stroke="#64748B" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <line x1="95" y1="170" x2="140" y2="125" stroke="#EF4444" stroke-width="2"/>
+  <text x="145" y="130" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#DC2626">v₀ (45° = R maks)</text>
+
+  <!-- Target impact -->
+  <ellipse cx="365" cy="215" rx="12" ry="5" fill="#991B1B" opacity="0.6"/>
+
+  <!-- Title Badge -->
+  <rect x="15" y="15" width="220" height="26" rx="6" fill="#FFFFFF" opacity="0.9" stroke="#E2E8F0"/>
+  <text x="25" y="32" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#1E3A8A">4. Lintasan Peluru Meriam</text>
+</svg>
+

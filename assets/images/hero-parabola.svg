@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#F0FDF4" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="ballGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#1E3A8A" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0891B2"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+  </defs>
+
+  <!-- Background Card -->
+  <rect x="10" y="10" width="580" height="380" rx="20" fill="url(#bgGrad)" stroke="#DBEAFE" stroke-width="2" filter="url(#shadow)"/>
+
+  <!-- Grid Pattern -->
+  <g stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="60" y1="60" x2="540" y2="60"/>
+    <line x1="60" y1="120" x2="540" y2="120"/>
+    <line x1="60" y1="180" x2="540" y2="180"/>
+    <line x1="60" y1="240" x2="540" y2="240"/>
+    <line x1="60" y1="300" x2="540" y2="300"/>
+
+    <line x1="120" y1="60" x2="120" y2="330"/>
+    <line x1="180" y1="60" x2="180" y2="330"/>
+    <line x1="240" y1="60" x2="240" y2="330"/>
+    <line x1="300" y1="60" x2="300" y2="330"/>
+    <line x1="360" y1="60" x2="360" y2="330"/>
+    <line x1="420" y1="60" x2="420" y2="330"/>
+    <line x1="480" y1="60" x2="480" y2="330"/>
+  </g>
+
+  <!-- Coordinate Axes -->
+  <g stroke="#475569" stroke-width="2.5">
+    <!-- X Axis -->
+    <line x1="50" y1="320" x2="550" y2="320" marker-end="url(#arrow)"/>
+    <text x="555" y="325" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="14" fill="#1E293B">X (m)</text>
+
+    <!-- Y Axis -->
+    <line x1="70" y1="340" x2="70" y2="40" marker-end="url(#arrow)"/>
+    <text x="65" y="30" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="14" fill="#1E293B">Y (m)</text>
+  </g>
+
+  <!-- Ground Line -->
+  <rect x="50" y="320" width="510" height="25" fill="#E2E8F0" rx="4"/>
+  <line x1="50" y1="320" x2="560" y2="320" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Parabolic Trajectory -->
+  <path d="M 70 320 Q 295 10 520 320" fill="none" stroke="url(#curveGrad)" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Height Marker at Peak -->
+  <line x1="295" y1="320" x2="295" y2="88" stroke="#7C3AED" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="295" cy="88" r="5" fill="#7C3AED"/>
+  <!-- Badge H maks -->
+  <rect x="235" y="65" width="120" height="28" rx="14" fill="#7C3AED"/>
+  <text x="295" y="84" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">H maks (Vy = 0)</text>
+
+  <!-- Range Marker R -->
+  <line x1="70" y1="350" x2="520" y2="350" stroke="#0284C7" stroke-width="2"/>
+  <line x1="70" y1="344" x2="70" y2="356" stroke="#0284C7" stroke-width="2"/>
+  <line x1="520" y1="344" x2="520" y2="356" stroke="#0284C7" stroke-width="2"/>
+  <rect x="235" y="336" width="120" height="24" rx="12" fill="#0284C7"/>
+  <text x="295" y="352" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Jarak Maksimum (R)</text>
+
+  <!-- Elevation Angle Arc -->
+  <path d="M 125 320 A 55 55 0 0 0 110 278" fill="none" stroke="#F59E0B" stroke-width="3"/>
+  <text x="135" y="295" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="16" fill="#D97706">θ</text>
+
+  <!-- Initial Velocity Vector V0 -->
+  <line x1="70" y1="320" x2="145" y2="235" stroke="#2563EB" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <text x="125" y="225" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="14" fill="#1D4ED8">v₀</text>
+
+  <!-- Vx Vector component -->
+  <line x1="70" y1="320" x2="145" y2="320" stroke="#0891B2" stroke-width="2.5" stroke-dasharray="4 2" marker-end="url(#arrowCyan)"/>
+  <text x="120" y="312" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="12" fill="#0891B2">v₀x (GLB)</text>
+
+  <!-- Vy Vector component -->
+  <line x1="70" y1="320" x2="70" y2="235" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="4 2" marker-end="url(#arrowPurple)"/>
+  <text x="32" y="250" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="12" fill="#7C3AED">v₀y (GLBB)</text>
+
+  <!-- Animated-like Ball on Trajectory -->
+  <circle cx="170" cy="180" r="10" fill="url(#ballGrad)" stroke="#FFFFFF" stroke-width="2.5" filter="url(#shadow)"/>
+  <!-- Tangent velocity at that point -->
+  <line x1="170" y1="180" x2="225" y2="135" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="170" y1="180" x2="225" y2="180" stroke="#0891B2" stroke-width="2" marker-end="url(#arrowCyan)"/>
+  <line x1="170" y1="180" x2="170" y2="135" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrowPurple)"/>
+
+  <!-- Cannon / Launcher at (70, 320) -->
+  <g transform="translate(70, 320) rotate(-45)">
+    <rect x="-12" y="-8" width="36" height="16" rx="4" fill="#334155" stroke="#1E293B" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="10" fill="#475569"/>
+    <circle cx="0" cy="0" r="4" fill="#94A3B8"/>
+  </g>
+
+  <!-- Landing point marker -->
+  <circle cx="520" cy="320" r="7" fill="#EF4444"/>
+  <circle cx="520" cy="320" r="14" fill="none" stroke="#EF4444" stroke-width="2" opacity="0.6"/>
+  <text x="520" y="300" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#DC2626" text-anchor="middle">Titik Jatuh</text>
+</svg>
+

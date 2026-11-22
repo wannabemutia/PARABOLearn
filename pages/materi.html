@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Pembelajaran - PARABOLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo.svg">
+  <style>
+    .topic-tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border-color);
+      scrollbar-width: thin;
+    }
+
+    .topic-tab-btn {
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .topic-tab-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary-soft);
+      background-color: var(--primary-light);
+    }
+
+    .topic-tab-btn.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    }
+
+    .topic-content-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .topic-content-section.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo" aria-label="PARABOLearn Beranda">
+        <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="petunjuk.html" class="nav-link">Petunjuk</a></li>
+          <li><a href="materi.html" class="nav-link active">Materi</a></li>
+          <li><a href="komponen.html" class="nav-link">Komponen Gerak</a></li>
+          <li><a href="besaran.html" class="nav-link">Besaran & Rumus</a></li>
+          <li><a href="animasi.html" class="nav-link">Animasi</a></li>
+          <li><a href="simulasi.html" class="nav-link">Simulasi</a></li>
+          <li><a href="contoh-soal.html" class="nav-link">Contoh Soal</a></li>
+          <li><a href="latihan.html" class="nav-link">Latihan</a></li>
+          <li><a href="evaluasi.html" class="nav-link">Evaluasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" aria-label="Toggle Suara" title="Aktif/Nonaktifkan Suara"></button>
+        <button class="mobile-toggle" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Page Header -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span>›</span>
+        <span>Materi Pembelajaran</span>
+      </nav>
+      <h1 class="page-title">Materi Fisika: Gerak Parabola Kelas XI</h1>
+      <p class="page-subtitle">Yuk, kita pelajari konsep gerak parabola dengan cara yang asyik, santai, dan mudah
+        dipahami seperti membaca buku fisika favoritmu!</p>
+    </div>
+  </div>
+
+  <main class="container" style="margin-bottom: 4rem;">
+    <!-- Interactive Tabs for 5 Materials -->
+    <div class="topic-tab-nav" role="tablist">
+      <button class="topic-tab-btn active" data-tab="tab-materi-1" role="tab">1. Apa Itu Gerak Parabola?</button>
+      <button class="topic-tab-btn" data-tab="tab-materi-2" role="tab">2. Membedah Komponen Gerak</button>
+      <button class="topic-tab-btn" data-tab="tab-materi-3" role="tab">3. Rahasia Bentuk Lintasan</button>
+      <button class="topic-tab-btn" data-tab="tab-materi-4" role="tab">4. Rumus & Besaran Penting</button>
+      <button class="topic-tab-btn" data-tab="tab-materi-5" role="tab">5. Contoh Nyata di Sekitar Kita</button>
+    </div>
+
+    <!-- ==========================================
+         MATERI 1: PENGERTIAN GERAK PARABOLA
+         ========================================== -->
+    <section id="tab-materi-1" class="topic-content-section active">
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="badge badge-primary" style="margin-bottom: 1rem;">Materi 1: Konsep Dasar</div>
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem;">Pernahkah Kamu
+          Memperhatikan Bola yang Ditendang Melambung? ⚽</h2>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+          Pernahkah kamu melihat pemain sepak bola menendang bola melambung melewati pagar lawan menuju gawang? Atau
+          saat temanmu melempar bola basket melengkung indah masuk ke ring?
+        </p>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+          Gerakan bola yang melengkung seperti busur itu dinamakan <strong>Gerak Parabola</strong> (atau sering juga
+          disebut <em>gerak peluru / projectile motion</em>). Gerak ini terjadi saat suatu benda dilempar dengan
+          kecepatan awal tertentu dan membentuk sudut kemiringan (sudut elevasi) terhadap tanah.
+        </p>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <h4>Kunci Utama: Dua Gerak dalam Satu Waktu!</h4>
+            <p style="line-height: 1.7;">
+              Tahukah kamu rahasia terbesar dari gerak parabola? Gerak ini sebenarnya bukan satu gerakan yang rumit,
+              melainkan <strong>gabungan dari DUA gerakan sekaligus</strong> yang berjalan bersamaan tetapi tidak saling
+              mengganggu:
+            </p>
+            <ul style="margin-top: 0.6rem; padding-left: 1.25rem; line-height: 1.7;">
+              <li><strong>1. Gerak Lurus Beraturan (Sumbu X) &rarr; GLB:</strong> Di udara, kalau hambatan angin
+                diabaikan, tidak ada gaya apa pun yang mendorong atau mengerem bola ke depan. Oleh karena itu, bola
+                melaju maju dengan kecepatan tetap (<strong>GLB</strong>, percepatan ax = 0).</li>
+              <li><strong>2. Gerak Lurus Berubah Beraturan (Sumbu Y) &rarr; GLBB:</strong> Di saat yang bersamaan, bumi
+                selalu
+                menarik benda ke bawah karena ada gaya gravitasi (g). Saat bola naik, gerakannya diperlambat oleh
+                gravitasi sampai berhenti sesaat di titik paling tinggi. Setelah itu, bola meluncur jatuh ke bawah
+                dengan gerakan yang semakin lama semakin cepat (<strong>GLBB</strong>, percepatan ay = -g).</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 1.75rem 0 1rem; color: var(--text-main);">Tiga Ciri Khas
+          Gerak Parabola yang Wajib Kamu Ingat:</h3>
+        <div class="grid-3">
+          <div
+            style="background-color: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary-deep); margin-bottom: 0.5rem;">1.
+              Lintasannya Melengkung Simetris</h4>
+            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">Bentuk lengkungan saat bola naik
+              dan saat bola turun terlihat persis sama (seperti cermin) jika ketinggian tempat mulai dan tempat
+              mendaratnya sama datar.</p>
+          </div>
+
+          <div
+            style="background-color: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--purple);">
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--purple); margin-bottom: 0.5rem;">2. Di Titik
+              Puncak, Vy = 0</h4>
+            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">Saat berada di titik paling atas,
+              bola berhenti naik (kecepatan tegaknya nol). Namun bola tetap meluncur ke depan karena kecepatan
+              mendatarnya masih ada!</p>
+          </div>
+
+          <div
+            style="background-color: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--cyan-dark);">
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--cyan-dark); margin-bottom: 0.5rem;">3. Waktu Naik
+              = Waktu Turun</h4>
+            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">Lama waktu bola dari tanah sampai
+              ke titik tertinggi sama persis dengan waktu bola dari puncak meluncur kembali ke tanah!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MATERI 2: KOMPONEN GERAK PARABOLA
+         ========================================== -->
+    <section id="tab-materi-2" class="topic-content-section">
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="badge badge-cyan" style="margin-bottom: 1rem;">Materi 2: Membedah Komponen Gerak</div>
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem;">Mengapa
+          Kecepatan Awal Harus Dipecah Jadi Dua? 📐</h2>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+          Bayangkan kamu melempar batu dengan kecepatan awal <strong>v₀</strong> ke arah miring dengan sudut kemiringan
+          <strong>θ</strong> terhadap tanah. Kecepatan miring ini punya dua tugas sekaligus: <em>mendorong benda maju ke
+            depan</em> dan <em>mengangkat benda melambung ke atas</em>.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+          Supaya mudah dihitung, para ilmuwan fisika memecah kecepatan awal miring ini menjadi dua bagian menggunakan
+          trigonometri dasar:
+        </p>
+
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <div class="formula-card">
+            <div class="formula-name">1. Kecepatan Mendatar (Sumbu X)</div>
+            <div class="formula-equation">v₀x = v₀ cos θ</div>
+            <p class="formula-desc" style="line-height: 1.6;">
+              Ini adalah kecepatan maju ke depan. Karena di udara tidak ada gaya yang menghambat gerak mendatar, maka
+              nilainya <strong>SELALU SAMA / KONSTAN</strong> di detik mana pun:<br>
+              <strong>Vx = v₀ cos θ (Tetap, GLB)</strong>
+            </p>
+          </div>
+
+          <div class="formula-card">
+            <div class="formula-name">2. Kecepatan Tegak (Sumbu Y)</div>
+            <div class="formula-equation">v₀y = v₀ sin θ</div>
+            <p class="formula-desc" style="line-height: 1.6;">
+              Ini adalah kecepatan melambung ke atas. Karena ditarik gravitasi bumi (g), nilainya <strong>BERUBAH SETIAP
+                DETIK</strong>:<br>
+              <strong>Vy = v₀ sin θ - g × t (GLBB)</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">🚨</div>
+          <div class="callout-content">
+            <h4>Awas Terkecoh! Pertanyaan yang Sering Muncul di Ujian:</h4>
+            <p style="line-height: 1.7;">
+              <em>"Berapakah kecepatan benda di titik puncak tertinggi?"</em><br>
+              Banyak siswa yang menjawab <strong>0</strong>. Itu keliru! Yang bernilai nol hanyalah kecepatan tegaknya
+              (<strong>Vy = 0</strong>). Benda masih punya kecepatan mendatar (<strong>Vx = v₀ cos θ</strong>). Jadi di
+              titik puncak, kelajuan totalnya adalah <strong>v = v₀ cos θ</strong> dan arahnya murni mendatar!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MATERI 3: KARAKTERISTIK LINTASAN
+         ========================================== -->
+    <section id="tab-materi-3" class="topic-content-section">
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="badge badge-purple" style="margin-bottom: 1rem;">Materi 3: Rahasia Bentuk Lintasan</div>
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem;">Sudut Berapa
+          yang Menghasilkan Lemparan Terjauh? 🎯</h2>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+          Jauh atau dekatnya lemparanmu ternyata sangat ditentukan oleh dua hal: <strong>seberapa kencang lemparan
+            awalmu (v₀)</strong> dan <strong>sudut kemiringan lemparanmu (θ)</strong>.
+        </p>
+
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <div class="card" style="background-color: var(--bg-alt); border-top: 4px solid var(--primary);">
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem;">🌟 Sudut Emas: 45 Derajat!</h3>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7;">
+              Jika kamu ingin melempar benda sejauh mungkin di tanah datar tanpa hambatan angin, gunakanlah
+              <strong>sudut 45°</strong>!
+            </p>
+            <ul style="padding-left: 1.25rem; font-size: 0.92rem; margin-top: 0.5rem; line-height: 1.7;">
+              <li><strong>Sudut terlalu kecil (&lt; 45°):</strong> Bolanya meluncur cepat ke depan, tapi lintasannya
+                terlalu ceper sehingga cepat sekali jatuh mencium tanah.</li>
+              <li><strong>Sudut terlalu besar (&gt; 45°):</strong> Bolanya melambung sangat tinggi ke langit, tapi
+                tenaganya habis untuk naik ke atas sehingga jarak majunya pendek.</li>
+              <li><strong>Pada sudut 45°:</strong> Tenaga dorong maju dan tenaga lambung ke atas terbagi dengan sangat
+                pas dan seimbang!</li>
+            </ul>
+          </div>
+
+          <div class="card" style="background-color: var(--bg-alt); border-top: 4px solid var(--cyan-dark);">
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem;">👯 Fakta Unik: Sudut Kembar
+              (Berpenyiku)</h3>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7;">
+              Coba bayangkan: kamu menembak dengan sudut <strong>30°</strong>, lalu temanmu menembak dengan sudut
+              <strong>60°</strong> memakai kecepatan awal yang sama. Di manakah peluru kalian jatuh?
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7; margin-top: 0.5rem;">
+              Jawabannya: <strong>Tepat di titik yang sama!</strong> Selama jumlah kedua sudut adalah
+              <strong>90°</strong> (seperti 30° & 60°, atau 15° & 75°), jarak jangkauan mendatarnya akan sama persis.
+              Bedanya, yang sudut 60° melambung lebih tinggi dan lebih lama di udara.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MATERI 4: BESARAN-BESARAN UTAMA
+         ========================================== -->
+    <section id="tab-materi-4" class="topic-content-section">
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="badge badge-primary" style="margin-bottom: 1rem;">Materi 4: Rumus Praktis</div>
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem;">Besaran dan
+          Rumus yang Sering Ditanyakan dalam Soal 🧮</h2>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
+          Supaya kamu tidak sekadar menghafal rumus, yuk kita pahami arti dari masing-masing rumus dengan cerita yang
+          masuk akal:
+        </p>
+
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <!-- Rumus 1 -->
+          <div class="formula-card">
+            <div class="formula-name">1. Waktu Menuju Titik Puncak</div>
+            <div class="formula-equation">t puncak = (v₀ × sin θ) / g</div>
+            <p class="formula-desc" style="line-height: 1.6;">
+              <strong>Artinya:</strong> Kecepatan naik awal (v₀ sin θ) secara bertahap dikurangi oleh gravitasi (g).
+              Waktu yang dibutuhkan sampai bola berhenti naik adalah kecepatan awal dibagi nilai gravitasi.
+            </p>
+          </div>
+
+          <!-- Rumus 2 -->
+          <div class="formula-card">
+            <div class="formula-name">2. Waktu Total di Udara</div>
+            <div class="formula-equation">t total = 2 × t puncak</div>
+            <p class="formula-desc" style="line-height: 1.6;">
+              <strong>Artinya:</strong> Karena waktu naik sama dengan waktu turun, maka waktu total bola melayang di
+              udara sampai mendarat kembali tinggal dikali dua saja: <code>(2 × v₀ sin θ) / g</code>.
+            </p>
+          </div>
+
+          <!-- Rumus 3 -->
+          <div class="formula-card">
+            <div class="formula-name">3. Ketinggian Maksimum (H maks)</div>
+            <div class="formula-equation">H maks = (v₀² × sin² θ) / (2g)</div>
+            <p class="formula-desc" style="line-height: 1.6;">
+              <strong>Artinya:</strong> Titik paling tinggi yang bisa digapai benda sebelum ia berbalik arah meluncur
+              turun ke bawah tanah.
+            </p>
+          </div>
+
+          <!-- Rumus 4 -->
+          <div class="formula-card">
+            <div class="formula-name">4. Jarak Jangkauan Terjauh (R)</div>
+            <div class="formula-equation">R = (v₀² × sin 2θ) / g</div>
+            <p class="formula-desc" style="line-height: 1.6;">
+              <strong>Artinya:</strong> Jarak mendatar terjauh dari tempat awal benda diluncurkan sampai menyentuh tanah
+              kembali. Nilai R ini paling besar saat sudut θ = 45°.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="background-color: var(--bg-alt);">
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem;">Kamus Simbol
+            Sederhana:</h4>
+          <div class="grid-3" style="font-size: 0.92rem; line-height: 1.6;">
+            <div>• <strong>v₀</strong> : Kecepatan awal (m/s)</div>
+            <div>• <strong>θ</strong> : Sudut elevasi / kemiringan (°)</div>
+            <div>• <strong>g</strong> : Gravitasi bumi (biasanya 9,8 atau 10 m/s²)</div>
+            <div>• <strong>t</strong> : Waktu tempuh (sekon)</div>
+            <div>• <strong>H maks</strong> : Tinggi puncak (meter)</div>
+            <div>• <strong>R</strong> : Jarak jangkauan terjauh (meter)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MATERI 5: PENERAPAN DALAM KEHIDUPAN SEHARI-HARI
+         ========================================== -->
+    <section id="tab-materi-5" class="topic-content-section">
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="badge badge-success" style="margin-bottom: 1rem;">Materi 5: Penerapan Nyata</div>
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem;">Gerak Parabola
+          Ada di Sekitar Kita! 🌍</h2>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
+          Kamu tidak perlu menjadi astronot untuk melihat gerak parabola. Fenomena ini ada di kegiatan sehari-hari yang
+          sangat sering kita jumpai:
+        </p>
+
+        <div class="grid-2">
+          <!-- Contoh 1: Sepak Bola -->
+          <div class="card">
+            <div
+              style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+              <img src="../assets/images/sepak-bola.svg" alt="Ilustrasi Tendangan Bebas Sepak Bola" width="400"
+                height="260">
+            </div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">1.
+              Tendangan Melambung Sepak Bola</h3>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7;">
+              Saat pemain mengambil tendangan bebas, bola ditendang melambung melewati kepala pagar betis lawan. Bola
+              naik melewati titik tertinggi lalu menukik turun masuk ke gawang.
+            </p>
+          </div>
+
+          <!-- Contoh 2: Basket -->
+          <div class="card">
+            <div
+              style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+              <img src="../assets/images/bola-basket.svg" alt="Ilustrasi Lemparan Bola Basket" width="400" height="260">
+            </div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">2. Tembakan
+              Tiga Angka Bola Basket</h3>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7;">
+              Pemain basket sengaja melempar bola dengan lengkungan busur tinggi. Lengkungan ini membuat bola masuk ke
+              ring basket dengan sudut yang lebih tegak, sehingga peluang bola masuk jaring jadi lebih besar!
+            </p>
+          </div>
+
+          <!-- Contoh 3: Selang Air -->
+          <div class="card">
+            <div
+              style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+              <img src="../assets/images/selang-air.svg" alt="Ilustrasi Pancaran Selang Air" width="400" height="260">
+            </div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">3. Pancaran
+              Air Pemadam Kebakaran</h3>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7;">
+              Ketika petugas pemadam menyemprotkan air ke lantai atas gedung, air yang keluar dari ujung selang
+              membentuk pancaran melengkung parabola akibat pengaruh gaya gravitasi bumi.
+            </p>
+          </div>
+
+          <!-- Contoh 4: Meriam -->
+          <div class="card">
+            <div
+              style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+              <img src="../assets/images/meriam.svg" alt="Ilustrasi Lintasan Peluru Meriam" width="400" height="260">
+            </div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">4. Meriam
+              dan Roket Air Siswa</h3>
+            <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7;">
+              Saat lomba roket air di sekolah atau penembakan meriam artileri, laras peluncur dimiringkan mendekati
+              sudut 45° agar roket air bisa mendarat di jarak paling jauh di lapangan!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Bar between steps -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+      <a href="petunjuk.html" class="btn btn-secondary">
+        <span>← Kembali ke Petunjuk</span>
+      </a>
+      <a href="komponen.html" class="btn btn-primary btn-lg">
+        <span>Lanjut: Visualisasi Komponen Gerak →</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn"
+            style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+          <p>PARABOLearn adalah Multimedia Pembelajaran Interaktif Berbasis Web pada Materi Gerak Parabola untuk Siswa
+            Kelas XI SMA.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Menu Utama</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="petunjuk.html">Petunjuk</a></li>
+            <li><a href="materi.html">Materi Pokok</a></li>
+            <li><a href="komponen.html">Komponen Gerak</a></li>
+            <li><a href="simulasi.html">Simulasi Laboratorium</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Uji Kompetensi</h5>
+          <ul class="footer-links">
+            <li><a href="contoh-soal.html">Contoh Soal</a></li>
+            <li><a href="latihan.html">Latihan Soal</a></li>
+            <li><a href="evaluasi.html">Evaluasi Pembelajaran</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Identitas Peneliti</h5>
+          <p style="font-size:0.85rem; color:#94A3B8;">Meutya Khaerunnisa<br>NIM: 240209501076<br>PTIK E 24 - UNM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PARABOLearn. Hak Cipta Dilindungi.</div>
+        <div>Explore the Motion, Understand the Physics!</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Tab Switching Logic for Materi
+    const tabBtns = document.querySelectorAll('.topic-tab-btn');
+    const tabSections = document.querySelectorAll('.topic-content-section');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab');
+
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabSections.forEach(s => s.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) targetSection.classList.add('active');
+
+        if (window.SoundEffects) SoundEffects.playClick();
+      });
+    });
+  </script>
+</body>
+
+</html>

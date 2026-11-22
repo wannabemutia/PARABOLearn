@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Soal dan Pembahasan - PARABOLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo.svg">
+  <style>
+    .solution-box {
+      display: none;
+      background-color: var(--bg-alt);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 1.25rem;
+      border-left: 4px solid var(--primary);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .solution-box.show {
+      display: block;
+    }
+
+    .step-badge {
+      display: inline-block;
+      background-color: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.35rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo" aria-label="PARABOLearn Beranda">
+        <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="petunjuk.html" class="nav-link">Petunjuk</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="komponen.html" class="nav-link">Komponen Gerak</a></li>
+          <li><a href="besaran.html" class="nav-link">Besaran & Rumus</a></li>
+          <li><a href="animasi.html" class="nav-link">Animasi</a></li>
+          <li><a href="simulasi.html" class="nav-link">Simulasi</a></li>
+          <li><a href="contoh-soal.html" class="nav-link active">Contoh Soal</a></li>
+          <li><a href="latihan.html" class="nav-link">Latihan</a></li>
+          <li><a href="evaluasi.html" class="nav-link">Evaluasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" aria-label="Toggle Suara" title="Aktif/Nonaktifkan Suara"></button>
+        <button class="mobile-toggle" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Page Header -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span>›</span>
+        <span>Contoh Soal & Pembahasan</span>
+      </nav>
+      <h1 class="page-title">Belajar Mengerjakan Soal Fisika dengan Mudah! 📝</h1>
+      <p class="page-subtitle">Bingung cara memakai rumus saat ulangan? Yuk pelajari trik dan cara runtut mengerjakan
+        soal gerak parabola mulai dari menulis "Diketahui" sampai dapat jawaban yang tepat.</p>
+    </div>
+  </div>
+
+  <main class="container" style="margin-bottom: 4rem;">
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+      <!-- Contoh Soal 1: Sepak Bola -->
+      <div class="card">
+        <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Contoh 1: Sepak Bola ⚽</div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem;">
+          Tendangan Bebas Melambung Melewati Pagar Betis
+        </h3>
+        <p style="font-size: 1rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1rem;">
+          Seorang pemain sepak bola menendang bola dengan kecepatan awal <strong>v₀ = 20 m/s</strong> dan sudut
+          kemiringan <strong>θ = 30°</strong> terhadap tanah. Jika percepatan gravitasi bumi <strong>g = 10
+            m/s²</strong> dan hambatan udara diabaikan, tentukan:
+        </p>
+        <ol
+          style="padding-left: 1.5rem; font-size: 0.95rem; margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem; line-height: 1.6;">
+          <li>Kecepatan awal maju mendatar (v₀x) dan kecepatan awal melambung ke atas (v₀y).</li>
+          <li>Berapa lama waktu bola untuk sampai di titik paling tinggi (t puncak).</li>
+          <li>Berapa meter tinggi maksimum yang dicapai bola dari tanah (H maks).</li>
+          <li>Berapa meter jarak jangkauan terjauh saat bola menyentuh tanah kembali (R).</li>
+        </ol>
+
+        <button class="btn btn-secondary toggle-solution-btn">
+          <span>👁️ Coba Lihat Langkah Pembahasannya</span>
+        </button>
+
+        <div class="solution-box">
+          <div class="grid-2" style="margin-bottom: 1rem;">
+            <div>
+              <span class="step-badge">1. Apa Saja yang Diketahui?</span>
+              <ul style="font-size: 0.9rem; padding-left: 1.25rem; line-height: 1.6;">
+                <li>Kecepatan awal (v₀) = 20 m/s</li>
+                <li>Sudut kemiringan (θ) = 30° (ingat: sin 30° = 0,5 ; cos 30° = ½√3 ≈ 0,866)</li>
+                <li>Gravitasi bumi (g) = 10 m/s²</li>
+              </ul>
+            </div>
+            <div>
+              <span class="step-badge">2. Apa yang Ditanyakan?</span>
+              <ul style="font-size: 0.9rem; padding-left: 1.25rem; line-height: 1.6;">
+                <li>a) v₀x dan v₀y = ... ?</li>
+                <li>b) t puncak = ... ?</li>
+                <li>c) H maks = ... ?</li>
+                <li>d) Jarak jatuh terjauh R = ... ?</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="font-size: 0.92rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.75rem;">
+            <div>
+              <strong>Langkah a) Memecah Kecepatan Awal Jadi 2 Arah:</strong><br>
+              • Arah mendatar (maju): <code>v₀x = v₀ cos 30° = 20 × (½√3) = 10√3 m/s ≈ 17,32 m/s</code><br>
+              • Arah tegak (naik): <code>v₀y = v₀ sin 30° = 20 × 0,5 = 10 m/s</code>
+            </div>
+            <div>
+              <strong>Langkah b) Waktu Sampai di Puncak Tertinggi:</strong><br>
+              <code>t puncak = (v₀ sin θ) / g = 10 / 10 = 1,0 sekon</code>
+            </div>
+            <div>
+              <strong>Langkah c) Rekor Ketinggian Maksimum:</strong><br>
+              <code>H maks = (v₀y)² / (2g) = 10² / (2 × 10) = 100 / 20 = 5,0 meter</code>
+            </div>
+            <div>
+              <strong>Langkah d) Jarak Tembakan Terjauh di Lapangan:</strong><br>
+              <code>R = (v₀² sin 2θ) / g = (20² × sin 60°) / 10 = (400 × ½√3) / 10 = 20√3 m ≈ 34,64 meter</code>
+            </div>
+          </div>
+
+          <div class="callout callout-success" style="margin-top: 1rem; margin-bottom: 0;">
+            <div class="callout-icon">✅</div>
+            <div class="callout-content">
+              <h4>Kesimpulan yang Kamu Dapatkan:</h4>
+              <p>Bola melambung setinggi 5 meter setelah 1 detik di udara, lalu meluncur turun dan jatuh kembali ke
+                tanah sejauh 34,64 meter dari kaki sang penendang!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contoh Soal 2: Bola Basket -->
+      <div class="card">
+        <div class="badge badge-purple" style="margin-bottom: 0.75rem;">Contoh 2: Tembakan Tiga Angka Basket 🏀</div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem;">
+          Waktu di Udara dan Kecepatan Sesaat di Titik Tertinggi
+        </h3>
+        <p style="font-size: 1rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1rem;">
+          Seorang pemain basket menembakkan bola ke ring dengan kecepatan awal <strong>v₀ = 10 m/s</strong> dan sudut
+          elevasi <strong>θ = 60°</strong> (g = 10 m/s²). Tentukan:
+        </p>
+        <ol style="padding-left: 1.5rem; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
+          <li>Berapa lama waktu total bola melayang di udara sampai menyentuh lantai (t total).</li>
+          <li>Berapakah besar kecepatan bola tepat saat berada di titik paling tinggi?</li>
+        </ol>
+
+        <button class="btn btn-secondary toggle-solution-btn">
+          <span>👁️ Coba Lihat Langkah Pembahasannya</span>
+        </button>
+
+        <div class="solution-box">
+          <div style="font-size: 0.92rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.75rem;">
+            <div>
+              <strong>1. Data Soal:</strong><br>
+              v₀ = 10 m/s, θ = 60°, g = 10 m/s².<br>
+              sin 60° = ½√3 ≈ 0,866 ; cos 60° = 0,5.
+            </div>
+            <div>
+              <strong>2. Menghitung Lama Melayang di Udara (t total):</strong><br>
+              <code>t total = (2 × v₀ × sin θ) / g = (2 × 10 × ½√3) / 10 = √3 sekon ≈ 1,73 sekon</code>
+            </div>
+            <div>
+              <strong>3. Menghitung Kecepatan di Titik Puncak:</strong><br>
+              Ingat konsep penting: Di titik puncak tertinggi, bola hanya berhenti naik (<code>Vy = 0</code>).<br>
+              Namun kecepatan majunya (Vx) tetap bekerja penuh!<br>
+              <code>v puncak = Vx = v₀ cos 60° = 10 × 0,5 = 5,0 m/s (arah mendatar)</code>
+            </div>
+          </div>
+
+          <div class="callout callout-info" style="margin-top: 1rem; margin-bottom: 0;">
+            <div class="callout-icon">💡</div>
+            <div class="callout-content">
+              <h4>Tips Supaya Nggak Terjebak:</h4>
+              <p>Jangan pernah menjawab kecepatan di puncak adalah nol! Yang bernilai nol hanya kecepatan ke atas (Vy =
+                0), sedangkan kecepatan majunya tetap 5 m/s.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contoh Soal 3: Pembuktian Sudut 45 Derajat -->
+      <div class="card">
+        <div class="badge badge-cyan" style="margin-bottom: 0.75rem;">Contoh 3: Membuktikan Sudut Emas & Sudut Kembar 🎯
+        </div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem;">
+          Membandingkan Sudut 45°, 30°, dan 60°
+        </h3>
+        <p style="font-size: 1rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1rem;">
+          Sebuah meriam percobaan menembakkan peluru dengan kecepatan awal tetap <strong>v₀ = 50 m/s</strong> (g = 10
+          m/s²). Buktikan dengan angka bahwa:
+        </p>
+        <ol style="padding-left: 1.5rem; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
+          <li>Sudut kemiringan 45° menghasilkan jangkauan paling jauh dibandingkan sudut lainnya.</li>
+          <li>Sudut 30° dan 60° jatuh di jarak yang sama persis.</li>
+        </ol>
+
+        <button class="btn btn-secondary toggle-solution-btn">
+          <span>👁️ Coba Lihat Langkah Pembahasannya</span>
+        </button>
+
+        <div class="solution-box">
+          <div style="font-size: 0.92rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.75rem;">
+            <div>
+              <strong>Rumus Jarak Terjauh:</strong> <code>R = (v₀² sin 2θ) / g</code><br>
+              Dengan angka v₀ = 50 m/s dan g = 10 m/s², faktor awalnya adalah: <code>v₀² / g = 2500 / 10 = 250</code>.
+            </div>
+            <div>
+              <strong>1. Untuk Sudut θ = 45°:</strong><br>
+              <code>R₄₅ = 250 × sin(2 × 45°) = 250 × sin 90° = 250 × 1 = 250 meter</code>.<br>
+              Karena angka terbesar dari fungsi sinus adalah 1, maka 250 m adalah rekor jarak terjauh mutlak (R maks)!
+            </div>
+            <div>
+              <strong>2. Untuk Sudut θ = 30°:</strong><br>
+              <code>R₃₀ = 250 × sin(2 × 30°) = 250 × sin 60° = 250 × (½√3) = 125√3 ≈ 216,5 meter</code>.
+            </div>
+            <div>
+              <strong>3. Untuk Sudut θ = 60°:</strong><br>
+              <code>R₆₀ = 250 × sin(2 × 60°) = 250 × sin 120° = 250 × (½√3) = 125√3 ≈ 216,5 meter</code>.
+            </div>
+          </div>
+
+          <div class="callout callout-success" style="margin-top: 1rem; margin-bottom: 0;">
+            <div class="callout-icon">🎉</div>
+            <div class="callout-content">
+              <h4>Terbukti dengan Jelas!</h4>
+              <p>R₄₅ = 250 m terbukti paling jauh, dan R₃₀ = R₆₀ = 216,5 m membuktikan teori bahwa dua sudut yang
+                berjumlah 90° akan mendarat di jarak yang sama persis!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tombol Navigasi Lanjut dan Kembali -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color); margin-top: 2rem;">
+      <a href="simulasi.html" class="btn btn-secondary">
+        <span>← Kembali ke Simulasi</span>
+      </a>
+      <a href="latihan.html" class="btn btn-primary btn-lg">
+        <span>Lanjut ke Latihan Soal Interaktif →</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn"
+            style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+          <p>PARABOLearn adalah Multimedia Pembelajaran Interaktif Berbasis Web pada Materi Gerak Parabola untuk Siswa
+            Kelas XI SMA.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Menu Belajar</h5>
+          <ul class="footer-links">
+            <li><a href="materi.html">Materi Pokok</a></li>
+            <li><a href="komponen.html">Komponen Gerak</a></li>
+            <li><a href="besaran.html">Besaran & Rumus</a></li>
+            <li><a href="simulasi.html">Simulasi Laboratorium</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Uji Mandiri</h5>
+          <ul class="footer-links">
+            <li><a href="contoh-soal.html">Contoh Soal</a></li>
+            <li><a href="latihan.html">Latihan Soal</a></li>
+            <li><a href="evaluasi.html">Evaluasi Pembelajaran</a></li>
+            <li><a href="hasil.html">Hasil Evaluasi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Identitas Peneliti</h5>
+          <p style="font-size:0.85rem; color:#94A3B8;">Meutya Khaerunnisa<br>NIM: 240209501076<br>PTIK E 24 - UNM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PARABOLearn. Hak Cipta Dilindungi.</div>
+        <div>Explore the Motion, Understand the Physics!</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Toggle Solution Handlers
+    document.querySelectorAll('.toggle-solution-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const solutionBox = btn.nextElementSibling;
+        if (solutionBox) {
+          const isShown = solutionBox.classList.toggle('show');
+          btn.innerHTML = isShown ? '<span>🙈 Sembunyikan Pembahasan</span>' : '<span>👁️ Coba Lihat Langkah Pembahasannya</span>';
+          if (window.SoundEffects) SoundEffects.playClick();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="50%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+    <linearGradient id="gradAccent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Logo Mark Symbol -->
+  <g transform="translate(10, 10)">
+    <!-- Base Platform / Coordinate axes -->
+    <line x1="6" y1="52" x2="56" y2="52" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+    <line x1="6" y1="52" x2="6" y2="8" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+    
+    <!-- Parabolic Curve -->
+    <path d="M 6 50 Q 30 2 54 50" fill="none" stroke="url(#gradPrimary)" stroke-width="4.5" stroke-linecap="round"/>
+    
+    <!-- Trajectory dashed inner guide -->
+    <path d="M 6 50 Q 30 14 54 50" fill="none" stroke="url(#gradPurple)" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+
+    <!-- Launch Origin -->
+    <circle cx="6" cy="50" r="3.5" fill="#2563EB"/>
+
+    <!-- Peak Projectile Ball (Glowing) -->
+    <circle cx="30" cy="14" r="6" fill="url(#gradPurple)" filter="url(#glow)"/>
+    <circle cx="30" cy="14" r="3" fill="#FFFFFF"/>
+
+    <!-- Landing Target Point -->
+    <circle cx="54" cy="50" r="3.5" fill="#06B6D4"/>
+
+    <!-- Angle indicator arc -->
+    <path d="M 18 50 A 12 12 0 0 0 14 41" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Logo Typographic Text -->
+  <g transform="translate(80, 48)">
+    <text font-family="'Segoe UI', Inter, system-ui, -apple-system, sans-serif" font-weight="900" font-size="28" letter-spacing="-0.5">
+      <tspan fill="#1E3A8A">PARABO</tspan>
+      <tspan fill="url(#gradPurple)">Learn</tspan>
+    </text>
+    <!-- Tagline pill / badge -->
+    <text x="2" y="16" font-family="'Segoe UI', Inter, system-ui, -apple-system, sans-serif" font-weight="600" font-size="9" fill="#0284C7" letter-spacing="1.5">
+      EXPLORE • SIMULATE • MASTER
+    </text>
+  </g>
+</svg>
+

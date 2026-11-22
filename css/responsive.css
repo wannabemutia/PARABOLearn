@@ -1,0 +1,177 @@
+/* ===================================================================
+   PARABOLearn - Responsive Stylesheet
+   Breakpoints: 1024px, 768px, 640px, 480px
+   =================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-tagline {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .sim-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-telemetry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    border-bottom: 2px solid var(--border-color);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-150%);
+    transition: transform var(--transition-normal);
+    z-index: 999;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .canvas-container {
+    height: 380px;
+  }
+
+  .sim-telemetry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .eval-spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eval-start-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .result-breakdown {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .canvas-container {
+    height: 320px;
+  }
+
+  .sim-telemetry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-button-group {
+    grid-template-columns: 1fr;
+  }
+
+  .eval-spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-header-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .quiz-nav-actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .quiz-nav-actions .btn {
+    width: 100%;
+  }
+}
+

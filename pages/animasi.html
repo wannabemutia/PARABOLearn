@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animasi Gerak Parabola - PARABOLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo.svg">
+  <style>
+    .anim-stage-card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+    }
+
+    .anim-canvas-wrapper {
+      position: relative;
+      width: 100%;
+      height: 440px;
+      background-color: #0B1120;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .anim-canvas-wrapper canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo" aria-label="PARABOLearn Beranda">
+        <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="petunjuk.html" class="nav-link">Petunjuk</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="komponen.html" class="nav-link">Komponen Gerak</a></li>
+          <li><a href="besaran.html" class="nav-link">Besaran & Rumus</a></li>
+          <li><a href="animasi.html" class="nav-link active">Animasi</a></li>
+          <li><a href="simulasi.html" class="nav-link">Simulasi</a></li>
+          <li><a href="contoh-soal.html" class="nav-link">Contoh Soal</a></li>
+          <li><a href="latihan.html" class="nav-link">Latihan</a></li>
+          <li><a href="evaluasi.html" class="nav-link">Evaluasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" aria-label="Toggle Suara" title="Aktif/Nonaktifkan Suara"></button>
+        <button class="mobile-toggle" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Page Header -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span>›</span>
+        <span>Animasi Gerak Parabola</span>
+      </nav>
+      <h1 class="page-title">Saksikan Bola Meluncur di Udara! 🎬</h1>
+      <p class="page-subtitle">Tekan tombol <strong>Play</strong> di bawah untuk menyaksikan bagaimana proyektil
+        melayang mengikuti kurva parabola secara mulus. Kamu juga bisa memperlambat gerakannya (slow motion) agar lebih
+        mudah diamati!</p>
+    </div>
+  </div>
+
+  <main class="container" style="margin-bottom: 4rem;">
+    <!-- Main Animation Stage -->
+    <div class="anim-stage-card">
+      <div
+        style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.75rem;">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span class="badge badge-primary">Animasi Aktif 60 FPS</span>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Kecepatan: v₀ = 25 m/s | Sudut: θ = 45° | Gravitasi:
+            9,8 m/s²</span>
+        </div>
+
+        <!-- Playback Controls -->
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <button id="btn-play" class="btn btn-primary btn-sm">
+            <span>▶ Putar (Play)</span>
+          </button>
+          <button id="btn-pause" class="btn btn-secondary btn-sm">
+            <span>⏸ Jeda (Pause)</span>
+          </button>
+          <button id="btn-replay" class="btn btn-secondary btn-sm">
+            <span>🔄 Ulangi (Replay)</span>
+          </button>
+          <!-- Speed dropdown -->
+          <select id="select-speed" class="select-input"
+            style="width: auto; padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+            <option value="1.0">Kecepatan: 1.0x (Normal)</option>
+            <option value="0.5">Kecepatan: 0.5x (Lambat)</option>
+            <option value="0.25">Kecepatan: 0.25x (Super Lambat)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Canvas Stage -->
+      <div class="anim-canvas-wrapper">
+        <canvas id="anim-canvas"></canvas>
+      </div>
+
+      <!-- Live Telemetry HUD -->
+      <div class="sim-telemetry-grid">
+        <div class="telemetry-item">
+          <div class="telemetry-label">Waktu Tempuh (t)</div>
+          <div id="hud-time" class="telemetry-value">0.00 s</div>
+        </div>
+        <div class="telemetry-item">
+          <div class="telemetry-label">Posisi Mendatar (X)</div>
+          <div id="hud-x" class="telemetry-value">0.00 m</div>
+        </div>
+        <div class="telemetry-item">
+          <div class="telemetry-label">Ketinggian (Y)</div>
+          <div id="hud-y" class="telemetry-value">0.00 m</div>
+        </div>
+        <div class="telemetry-item">
+          <div class="telemetry-label">Kecepatan Maju (Vx)</div>
+          <div id="hud-vx" class="telemetry-value" style="color:var(--cyan-dark);">17.68 m/s</div>
+        </div>
+        <div class="telemetry-item">
+          <div class="telemetry-label">Kecepatan Tegak (Vy)</div>
+          <div id="hud-vy" class="telemetry-value" style="color:var(--purple);">17.68 m/s</div>
+        </div>
+        <div class="telemetry-item">
+          <div class="telemetry-label">Kelajuan Total (v)</div>
+          <div id="hud-v" class="telemetry-value" style="color:var(--success-dark);">25.00 m/s</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Petunjuk Observasi Siswa -->
+    <div class="section-title" style="margin-bottom: 1.5rem; text-align: left;">
+      <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main);">🔍 Tiga Titik Penting yang Perlu Kamu
+        Amati:</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">Saat animasi berputar, fokuskan pandanganmu
+        pada 3 fase kunci ini:</p>
+    </div>
+
+    <div class="grid-3" style="margin-bottom: 2.5rem;">
+      <div class="card">
+        <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Titik 1</div>
+        <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">1. Saat Baru Lepas Landas (0, 0)</h4>
+        <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">Benda mulai melesat dengan kecepatan
+          awal penuh v₀ = 25 m/s. Panah hijau menunjuk miring ke atas sebesar 45°. Di sini energi kinetik benda sedang
+          berada pada nilai maksimalnya!</p>
+      </div>
+
+      <div class="card">
+        <div class="badge badge-purple" style="margin-bottom: 0.5rem;">Titik 2</div>
+        <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">2. Tepat di Puncak Tertinggi (H maks)
+        </h4>
+        <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">Perhatikan panah ungu tegak (Vy) tepat
+          bernilai 0 m/s! Benda tidak naik lagi, tapi tetap bergerak meluncur maju mendatar karena kecepatan Vx tetap
+          ada (17,68 m/s).</p>
+      </div>
+
+      <div class="card">
+        <div class="badge badge-success" style="margin-bottom: 0.5rem;">Titik 3</div>
+        <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">3. Saat Mendarat di Tanah (Jarak R)
+        </h4>
+        <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">Benda mendarat kembali di tanah (Y = 0
+          m). Kecepatan total saat menabrak tanah sama persis dengan kecepatan awal peluncuran (25 m/s), hanya arahnya
+          yang menukik ke bawah!</p>
+      </div>
+    </div>
+
+    <!-- Tombol Navigasi Lanjut dan Kembali -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+      <a href="besaran.html" class="btn btn-secondary">
+        <span>← Kembali ke Besaran & Rumus</span>
+      </a>
+      <a href="simulasi.html" class="btn btn-primary btn-lg">
+        <span>Lanjut ke Laboratorium Virtual (Simulasi) →</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn"
+            style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+          <p>PARABOLearn adalah Multimedia Pembelajaran Interaktif Berbasis Web pada Materi Gerak Parabola untuk Siswa
+            Kelas XI SMA.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Alur Belajar</h5>
+          <ul class="footer-links">
+            <li><a href="materi.html">Materi Pokok</a></li>
+            <li><a href="komponen.html">Komponen Gerak</a></li>
+            <li><a href="besaran.html">Besaran & Rumus</a></li>
+            <li><a href="animasi.html">Animasi Gerak</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Eksperimen & Tes</h5>
+          <ul class="footer-links">
+            <li><a href="simulasi.html">Simulasi Laboratorium</a></li>
+            <li><a href="contoh-soal.html">Contoh Soal</a></li>
+            <li><a href="latihan.html">Latihan Soal</a></li>
+            <li><a href="evaluasi.html">Evaluasi Pembelajaran</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Identitas Peneliti</h5>
+          <p style="font-size:0.85rem; color:#94A3B8;">Meutya Khaerunnisa<br>NIM: 240209501076<br>PTIK E 24 - UNM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PARABOLearn. Hak Cipta Dilindungi.</div>
+        <div>Explore the Motion, Understand the Physics!</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const animator = new ParabolaAnimator('anim-canvas');
+
+      const btnPlay = document.getElementById('btn-play');
+      const btnPause = document.getElementById('btn-pause');
+      const btnReplay = document.getElementById('btn-replay');
+      const selectSpeed = document.getElementById('select-speed');
+
+      btnPlay.addEventListener('click', () => animator.start());
+      btnPause.addEventListener('click', () => animator.pause());
+      btnReplay.addEventListener('click', () => animator.reset());
+
+      selectSpeed.addEventListener('change', (e) => {
+        animator.setSpeed(parseFloat(e.target.value));
+      });
+    });
+  </script>
+</body>
+
+</html>

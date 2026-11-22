@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi Gerak Parabola - Laboratorium Virtual PARABOLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo.svg">
+  <style>
+    .sim-tag-pill {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-full);
+      background-color: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo" aria-label="PARABOLearn Beranda">
+        <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="petunjuk.html" class="nav-link">Petunjuk</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="komponen.html" class="nav-link">Komponen Gerak</a></li>
+          <li><a href="besaran.html" class="nav-link">Besaran & Rumus</a></li>
+          <li><a href="animasi.html" class="nav-link">Animasi</a></li>
+          <li><a href="simulasi.html" class="nav-link active">Simulasi</a></li>
+          <li><a href="contoh-soal.html" class="nav-link">Contoh Soal</a></li>
+          <li><a href="latihan.html" class="nav-link">Latihan</a></li>
+          <li><a href="evaluasi.html" class="nav-link">Evaluasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" aria-label="Toggle Suara" title="Aktif/Nonaktifkan Suara"></button>
+        <button class="mobile-toggle" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Page Header -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span>›</span>
+        <span>Laboratorium Virtual</span>
+      </nav>
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem; flex-wrap:wrap;">
+        <h1 class="page-title" style="margin:0;">Laboratorium Virtual Gerak Parabola 🔬</h1>
+        <span class="badge badge-purple" style="font-size:0.85rem;">Eksperimen Interaktif</span>
+      </div>
+      <p class="page-subtitle">Selamat datang di lab virtualmu! Di sini kamu bisa menjadi ilmuwan fisika: putar sudut
+        laras meriam, atur kecepatan tembakan, dan buktikan sendiri rumus-rumus fisika secara langsung di layar.</p>
+    </div>
+  </div>
+
+  <main class="container" style="margin-bottom: 4rem;">
+    <!-- SIMULATION MAIN STUDIO -->
+    <div class="sim-container">
+      <!-- Controls Panel (Left Column) -->
+      <div class="sim-controls-panel">
+        <div class="sim-panel-title">
+          <span>⚙️ Panel Eksperimen</span>
+          <span class="sim-tag-pill">Atur Sendiri Angkanya!</span>
+        </div>
+
+        <!-- 1. Parameter Kecepatan Awal v0 -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>1. Kecepatan Tembakan (v₀):</span>
+            <span id="label-sim-v0" class="control-val">20 m/s</span>
+          </div>
+          <input type="range" id="sim-v0" class="range-slider" min="5" max="80" step="1" value="20">
+          <div
+            style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-light); margin-top:2px;">
+            <span>5 m/s (Pelan)</span>
+            <span>40 m/s</span>
+            <span>80 m/s (Cepat)</span>
+          </div>
+        </div>
+
+        <!-- 2. Parameter Sudut Elevasi Theta -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>2. Kemiringan Meriam (θ):</span>
+            <span id="label-sim-angle" class="control-val">45°</span>
+          </div>
+          <input type="range" id="sim-angle" class="range-slider" min="0" max="90" step="1" value="45">
+          <div
+            style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-light); margin-top:2px;">
+            <span>0° (Mendatar)</span>
+            <span>45° (Sudut Emas)</span>
+            <span>90° (Tegak ke Langit)</span>
+          </div>
+        </div>
+
+        <!-- Preset Sudut Cepat -->
+        <div style="margin-bottom:1.25rem;">
+          <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.35rem;">Pilihan Cepat
+            Sudut:</div>
+          <div style="display:flex; gap:0.35rem; flex-wrap:wrap;">
+            <button class="btn btn-secondary btn-sm preset-angle-btn" data-angle="15">15°</button>
+            <button class="btn btn-secondary btn-sm preset-angle-btn" data-angle="30">30°</button>
+            <button class="btn btn-primary btn-sm preset-angle-btn" data-angle="45">45° ⭐</button>
+            <button class="btn btn-secondary btn-sm preset-angle-btn" data-angle="60">60°</button>
+            <button class="btn btn-secondary btn-sm preset-angle-btn" data-angle="75">75°</button>
+          </div>
+        </div>
+
+        <!-- 3. Parameter Percepatan Gravitasi g -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>3. Pilih Tempat Uji Coba:</span>
+            <span id="label-sim-g" class="control-val">9.80 m/s²</span>
+          </div>
+          <select id="select-sim-gravity" class="select-input" style="margin-bottom:0.5rem;">
+            <option value="9.8">Bumi Nyata (g = 9.80 m/s²)</option>
+            <option value="10.0">Bumi Standar Soal Sekolah (g = 10.0 m/s²)</option>
+            <option value="1.62">Bulan (g = 1.62 m/s² - Gravitasi Lemah)</option>
+            <option value="3.71">Planet Mars (g = 3.71 m/s²)</option>
+            <option value="24.79">Planet Jupiter (g = 24.79 m/s² - Tarikan Kuat)</option>
+          </select>
+        </div>
+
+        <!-- Feature Toggles -->
+        <div
+          style="background-color:var(--bg-alt); padding:0.85rem; border-radius:var(--radius-md); margin-bottom:1.25rem; display:flex; flex-direction:column; gap:0.5rem;">
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; cursor:pointer;">
+            <input type="checkbox" id="check-show-vectors" checked>
+            <span>Tampilkan Panah Kecepatan (Vx, Vy, v)</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; cursor:pointer;">
+            <input type="checkbox" id="check-show-grid" checked>
+            <span>Tampilkan Garis Kisi Koordinat (Grid)</span>
+          </label>
+        </div>
+
+        <!-- Interactive Action Buttons -->
+        <button id="btn-sim-launch" class="btn btn-primary"
+          style="width:100%; margin-bottom:0.6rem; font-size:1.05rem; padding:0.85rem;">
+          <span>🚀 Luncurkan Peluru Sekarang!</span>
+        </button>
+
+        <div class="sim-button-group">
+          <button id="btn-sim-pause" class="btn btn-secondary">
+            <span>⏸ Jeda</span>
+          </button>
+          <button id="btn-sim-reset" class="btn btn-secondary">
+            <span>🔄 Reset</span>
+          </button>
+        </div>
+
+        <div style="margin-top:0.75rem; display:flex; flex-direction:column; gap:0.5rem;">
+          <button id="btn-save-traj" class="btn btn-purple btn-sm" style="width:100%;">
+            <span>📊 Simpan Lintasan Ini (Bandingkan)</span>
+          </button>
+          <button id="btn-clear-traj" class="btn btn-secondary btn-sm" style="width:100%; font-size:0.8rem;">
+            <span>🧹 Bersihkan Garis Perbandingan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Canvas Viewport & Telemetry (Right Column) -->
+      <div class="canvas-viewport-card">
+        <div class="canvas-header-bar">
+          <div class="canvas-title">
+            <span>🔬 Papan Eksperimen Canvas</span>
+            <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">(Arahkan mouse ke garis untuk
+              cek angka)</span>
+          </div>
+          <div class="canvas-view-controls">
+            <span style="color:#06B6D4;">● Garis Aktif</span>
+            <span style="color:#A855F7;">● Puncak</span>
+            <span style="color:#EF4444;">● Titik Jatuh</span>
+          </div>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="canvas-container">
+          <canvas id="sim-canvas"></canvas>
+        </div>
+
+        <!-- Real-Time Telemetry HUD Display -->
+        <div class="sim-telemetry-grid">
+          <div class="telemetry-item">
+            <div class="telemetry-label">Kecepatan Maju (Vx)</div>
+            <div class="telemetry-value" id="sim-vx0">14.14</div>
+            <div class="telemetry-unit">m/s (Tetap)</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Kecepatan Naik Awal (Vy)</div>
+            <div class="telemetry-value" id="sim-vy0">14.14</div>
+            <div class="telemetry-unit">m/s (Awal)</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Waktu ke Puncak</div>
+            <div class="telemetry-value" id="sim-tpeak">1.44</div>
+            <div class="telemetry-unit">sekon</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Waktu Total Melayang</div>
+            <div class="telemetry-value" id="sim-ttotal">2.89</div>
+            <div class="telemetry-unit">sekon</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Tinggi Puncak (H)</div>
+            <div class="telemetry-value" id="sim-hmax" style="color:var(--purple);">10.20</div>
+            <div class="telemetry-unit">meter</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Jarak Jatuh (R)</div>
+            <div class="telemetry-value" id="sim-range" style="color:var(--cyan-dark);">40.82</div>
+            <div class="telemetry-unit">meter</div>
+          </div>
+        </div>
+
+        <!-- Auto Physics Insight Alert Box -->
+        <div id="sim-insight-note" class="callout callout-info" style="margin-top:1rem; margin-bottom:0;">
+          🎯 <strong>Kondisi Khusus 45°:</strong> Sudut elevasi 45° menghasilkan <em>jarak jangkauan terjauh (R
+            maksimum)</em> untuk kecepatan awal yang diberikan (pada kondisi datar tanpa hambatan udara)!
+        </div>
+      </div>
+    </div>
+
+    <!-- Eksperimen Pembuktian Konsep -->
+    <div class="card" style="margin-top: 2.5rem;">
+      <h3 class="card-title">🎯 Tiga Misi Eksperimen untuk Kamu Coba Sendiri!</h3>
+      <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1rem;">
+        Jangan cuma percaya kata buku, ayo buktikan sendiri dengan mengikuti langkah seru berikut:
+      </p>
+
+      <div class="grid-3" style="font-size: 0.92rem; margin-top: 1rem;">
+        <div
+          style="background-color:var(--bg-alt); padding:1.25rem; border-radius:var(--radius-md); border-top:3px solid var(--primary);">
+          <h4 style="font-weight:700; color:var(--primary); margin-bottom:0.5rem;">Misi 1: Buktikan 45° Paling Jauh!
+          </h4>
+          <p style="line-height:1.6;">Pilih kecepatan 30 m/s. Tembak di sudut 30°, lalu klik <em>"Simpan Lintasan"</em>.
+            Lakukan hal yang sama untuk sudut 45° dan 60°. Lihat di layar kanvas, lintasan warna mana yang mendarat
+            paling jauh? Pasti sudut 45°!</p>
+        </div>
+
+        <div
+          style="background-color:var(--bg-alt); padding:1.25rem; border-radius:var(--radius-md); border-top:3px solid var(--cyan-dark);">
+          <h4 style="font-weight:700; color:var(--cyan-dark); margin-bottom:0.5rem;">Misi 2: Temukan Sudut Kembar!</h4>
+          <p style="line-height:1.6;">Tembak peluru pada sudut <strong>30°</strong> lalu klik <em>"Simpan
+              Lintasan"</em>. Setelah itu, ubah sudutnya menjadi <strong>60°</strong> dan tembak lagi. Perhatikan titik
+            jatuhnya: kedua peluru mendarat di koordinat meter yang sama persis!</p>
+        </div>
+
+        <div
+          style="background-color:var(--bg-alt); padding:1.25rem; border-radius:var(--radius-md); border-top:3px solid var(--purple);">
+          <h4 style="font-weight:700; color:var(--purple); margin-bottom:0.5rem;">Misi 3: Menembak di Bulan!</h4>
+          <p style="line-height:1.6;">Tembakkan peluru di Bumi (g = 9,8 m/s²), simpan lintasannya. Lalu ganti tempat ke
+            <strong>Bulan (g = 1,62 m/s²)</strong> dan tembak lagi! Perhatikan betapa tingginya peluru melayang karena
+            gravitasi Bulan 6 kali lebih lemah dari Bumi.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tombol Navigasi Lanjut dan Kembali -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color); margin-top: 2rem;">
+      <a href="animasi.html" class="btn btn-secondary">
+        <span>← Kembali ke Animasi</span>
+      </a>
+      <a href="contoh-soal.html" class="btn btn-primary btn-lg">
+        <span>Lanjut: Contoh Soal & Pembahasan →</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn"
+            style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+          <p>PARABOLearn adalah Multimedia Pembelajaran Interaktif Berbasis Web pada Materi Gerak Parabola untuk Siswa
+            Kelas XI SMA.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Menu Belajar</h5>
+          <ul class="footer-links">
+            <li><a href="materi.html">Materi Pokok</a></li>
+            <li><a href="komponen.html">Komponen Gerak</a></li>
+            <li><a href="besaran.html">Besaran & Rumus</a></li>
+            <li><a href="animasi.html">Animasi Gerak</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Eksperimen & Tes</h5>
+          <ul class="footer-links">
+            <li><a href="simulasi.html">Simulasi Laboratorium</a></li>
+            <li><a href="contoh-soal.html">Contoh Soal</a></li>
+            <li><a href="latihan.html">Latihan Soal</a></li>
+            <li><a href="evaluasi.html">Evaluasi Akhir</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Identitas Peneliti</h5>
+          <p style="font-size:0.85rem; color:#94A3B8;">Meutya Khaerunnisa<br>NIM: 240209501076<br>PTIK E 24 - UNM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PARABOLearn. Hak Cipta Dilindungi.</div>
+        <div>Explore the Motion, Understand the Physics!</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/simulation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const simulator = new ParabolaSimulator('sim-canvas');
+
+      const sliderV0 = document.getElementById('sim-v0');
+      const sliderAngle = document.getElementById('sim-angle');
+      const selectGravity = document.getElementById('select-sim-gravity');
+
+      const labelV0 = document.getElementById('label-sim-v0');
+      const labelAngle = document.getElementById('label-sim-angle');
+      const labelG = document.getElementById('label-sim-g');
+
+      const btnLaunch = document.getElementById('btn-sim-launch');
+      const btnPause = document.getElementById('btn-sim-pause');
+      const btnReset = document.getElementById('btn-sim-reset');
+      const btnSaveTraj = document.getElementById('btn-save-traj');
+      const btnClearTraj = document.getElementById('btn-clear-traj');
+
+      const checkVectors = document.getElementById('check-show-vectors');
+      const checkGrid = document.getElementById('check-show-grid');
+
+      function syncParams() {
+        simulator.v0 = parseFloat(sliderV0.value);
+        simulator.angleDeg = parseFloat(sliderAngle.value);
+        simulator.g = parseFloat(selectGravity.value);
+
+        labelV0.textContent = `${simulator.v0} m/s`;
+        labelAngle.textContent = `${simulator.angleDeg}°`;
+        labelG.textContent = `${simulator.g.toFixed(2)} m/s²`;
+
+        simulator.updatePhysics();
+        simulator.calculateScale();
+        simulator.draw();
+      }
+
+      sliderV0.addEventListener('input', syncParams);
+      sliderAngle.addEventListener('input', syncParams);
+      selectGravity.addEventListener('change', syncParams);
+
+      // Preset Angle Buttons
+      document.querySelectorAll('.preset-angle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          sliderAngle.value = btn.getAttribute('data-angle');
+          document.querySelectorAll('.preset-angle-btn').forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-secondary');
+          });
+          btn.classList.add('btn-primary');
+          btn.classList.remove('btn-secondary');
+          syncParams();
+        });
+      });
+
+      // Toggles
+      checkVectors.addEventListener('change', (e) => {
+        simulator.showVectors = e.target.checked;
+        simulator.draw();
+      });
+
+      checkGrid.addEventListener('change', (e) => {
+        simulator.showGrid = e.target.checked;
+        simulator.draw();
+      });
+
+      // Simulation Action Buttons
+      btnLaunch.addEventListener('click', () => simulator.launch());
+      btnPause.addEventListener('click', () => {
+        if (simulator.isPlaying) {
+          simulator.pause();
+          btnPause.innerHTML = '<span>▶ Lanjutkan</span>';
+        } else {
+          simulator.resume();
+          btnPause.innerHTML = '<span>⏸ Jeda</span>';
+        }
+      });
+      btnReset.addEventListener('click', () => {
+        simulator.reset();
+        btnPause.innerHTML = '<span>⏸ Jeda</span>';
+      });
+
+      btnSaveTraj.addEventListener('click', () => simulator.saveCurrentTrajectory());
+      btnClearTraj.addEventListener('click', () => simulator.clearSavedTrajectories());
+    });
+  </script>
+</body>
+
+</html>

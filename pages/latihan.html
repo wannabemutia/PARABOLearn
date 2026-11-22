@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal Interaktif - PARABOLearn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo.svg">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-logo" aria-label="PARABOLearn Beranda">
+        <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="petunjuk.html" class="nav-link">Petunjuk</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="komponen.html" class="nav-link">Komponen Gerak</a></li>
+          <li><a href="besaran.html" class="nav-link">Besaran & Rumus</a></li>
+          <li><a href="animasi.html" class="nav-link">Animasi</a></li>
+          <li><a href="simulasi.html" class="nav-link">Simulasi</a></li>
+          <li><a href="contoh-soal.html" class="nav-link">Contoh Soal</a></li>
+          <li><a href="latihan.html" class="nav-link active">Latihan</a></li>
+          <li><a href="evaluasi.html" class="nav-link">Evaluasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" aria-label="Toggle Suara" title="Aktif/Nonaktifkan Suara"></button>
+        <button class="mobile-toggle" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Page Header -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span>›</span>
+        <span>Latihan Soal Interaktif</span>
+      </nav>
+      <h1 class="page-title">Latihan Mandiri & Umpan Balik Cepat 🎯</h1>
+      <p class="page-subtitle">Yuk uji pemahaman konsep dasar, komponen gerak, dan rumus gerak parabola kamu lewat 10
+        soal interaktif. Dilengkapi pembahasan langsung di setiap nomor biar belajarmu makin mantap!</p>
+    </div>
+  </div>
+
+  <main class="container quiz-container" style="margin-bottom: 4rem;">
+    <!-- Progress & Indicator Header Bar -->
+    <div class="quiz-header-bar">
+      <div>
+        <span class="badge badge-primary" style="margin-bottom: 0.25rem;">Mode Latihan Terpandu</span>
+        <div id="exercise-q-num" class="quiz-progress-text">Soal 1 dari 10</div>
+      </div>
+      <div style="font-size: 0.88rem; color: var(--text-muted);">
+        Umpan Balik Instan Aktif 🟢
+      </div>
+    </div>
+
+    <!-- Progress Track Bar -->
+    <div class="quiz-progress-track">
+      <div id="exercise-progress-fill" class="quiz-progress-fill"></div>
+    </div>
+
+    <!-- Active Question Card -->
+    <div class="question-card">
+      <h2 id="exercise-question-text" class="question-text">
+        Memuat soal latihan...
+      </h2>
+
+      <!-- Radio / Tile Options List -->
+      <div id="exercise-options-container" class="options-list">
+        <!-- Rendered dynamically by exercise.js -->
+      </div>
+
+      <!-- Feedback Banner (Correct/Incorrect + Explanation) -->
+      <div id="exercise-feedback" class="quiz-feedback"></div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="quiz-nav-actions">
+      <button id="exercise-prev-btn" class="btn btn-secondary">
+        <span>← Soal Sebelumnya</span>
+      </button>
+      <button id="exercise-next-btn" class="btn btn-primary">
+        <span>Soal Berikutnya →</span>
+      </button>
+    </div>
+
+    <!-- Tombol Alternatif Lanjut ke Evaluasi -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--border-color); margin-top: 2.5rem;">
+      <a href="contoh-soal.html" class="btn btn-secondary btn-sm">
+        <span>← Lihat Ulang Contoh Soal</span>
+      </a>
+      <a href="evaluasi.html" class="btn btn-purple">
+        <span>Siap Ujian? Buka Evaluasi Pembelajaran →</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Summary Modal at the End of Exercise -->
+  <div id="exercise-summary-modal" class="modal-overlay">
+    <div class="card" style="max-width: 520px; width: 100%; text-align: center; padding: 2.5rem 2rem;">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎉</div>
+      <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Latihan Soal
+        Selesai!</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Hebat! Anda telah menyelesaikan
+        seluruh 10 soal latihan mandiri.</p>
+
+      <div
+        style="background-color: var(--primary-light); padding: 1.25rem; border-radius: var(--radius-lg); margin-bottom: 1.5rem;">
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark); text-transform: uppercase;">Skor
+          Latihan Anda:</div>
+        <div id="summary-score"
+          style="font-size: 3.2rem; font-weight: 900; color: var(--primary-deep); line-height: 1.1;">0</div>
+        <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">
+          Benar: <strong id="summary-correct" style="color: var(--success-dark);">0</strong> | Salah: <strong
+            id="summary-incorrect" style="color: var(--danger-dark);">0</strong>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="evaluasi.html" class="btn btn-primary btn-lg" style="width: 100%;">
+          <span>Lanjut ke Evaluasi Pembelajaran (15 Soal) →</span>
+        </a>
+        <button onclick="location.reload()" class="btn btn-secondary" style="width: 100%;">
+          <span>🔄 Ulangi Latihan Soal</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo/logo.svg" alt="Logo PARABOLearn"
+            style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+          <p>PARABOLearn adalah Multimedia Pembelajaran Interaktif Berbasis Web pada Materi Gerak Parabola untuk Siswa
+            Kelas XI SMA.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Alur Belajar</h5>
+          <ul class="footer-links">
+            <li><a href="materi.html">Materi Pokok</a></li>
+            <li><a href="komponen.html">Komponen Gerak</a></li>
+            <li><a href="besaran.html">Besaran & Rumus</a></li>
+            <li><a href="simulasi.html">Simulasi Laboratorium</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Uji Kompetensi</h5>
+          <ul class="footer-links">
+            <li><a href="contoh-soal.html">Contoh Soal</a></li>
+            <li><a href="latihan.html">Latihan Soal</a></li>
+            <li><a href="evaluasi.html">Evaluasi Pembelajaran</a></li>
+            <li><a href="hasil.html">Hasil Evaluasi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Identitas Peneliti</h5>
+          <p style="font-size:0.85rem; color:#94A3B8;">Meutya Khaerunnisa<br>NIM: 240209501076<br>PTIK E 24 - UNM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PARABOLearn. Hak Cipta Dilindungi.</div>
+        <div>Explore the Motion, Understand the Physics!</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/exercise.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new ExerciseManager();
+    });
+  </script>
+</body>
+
+</html>
